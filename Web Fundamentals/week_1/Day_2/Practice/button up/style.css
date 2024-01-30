@@ -1,0 +1,22 @@
+.search{
+    color: lightgreen;
+    border-radius:50%;
+    border-color: lightgreen;
+    height: 30px;
+    width: 100px;
+    border-color: rgb(rgb(127,192, 201), green, blue);
+}
+.circle{
+    border-radius: 50%;
+    color: aliceblue;
+    background-color: lightseagreen;
+}
+.create{
+    color: white;
+    background-color: blue;
+    box-shadow: black;
+    border-style: ;
+    box-shadow:  10px 5px 5px black;
+    border-style: groove;
+    
+}
