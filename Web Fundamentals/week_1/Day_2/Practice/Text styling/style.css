@@ -1,0 +1,24 @@
+h1{
+    color: aliceblue;
+    outline: auto;
+    background-color: black;
+    text-align: left;
+    font-family: cursive;
+}
+span{
+    color: aqua;
+}
+h2{
+    text-align: center;
+    background-color: blueviolet;
+    color: aliceblue;
+    font-family: cursive;
+    padding: 0%;
+}
+h3{
+    text-align: right;
+    color: black ;
+    text-decoration: underline;
+    background-color: dodgerblue;
+    font-family: cursive;
+}
