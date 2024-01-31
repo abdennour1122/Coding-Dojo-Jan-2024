@@ -1,0 +1,38 @@
+h1{
+    text-align: center;
+}
+
+
+.top{
+    height: 100%;
+    width: 98%;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+
+}
+.mid{
+    height: 100%;
+    width: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(210, 123, 210);
+    margin-top: 2%;
+}
+
+.bot{
+    height: 100%;
+    width: 98%;
+    background-color: rgb(210, 245, 245);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2%;
+
+}
+h2{
+    text-align: center;
+}
