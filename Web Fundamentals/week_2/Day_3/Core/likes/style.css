@@ -1,0 +1,12 @@
+.container{
+    border: 1px solid black;
+    width: 30%;
+
+}
+.top{
+    display: flex;
+    justify-content: space-around;
+}
+p{
+    padding-left: 20px;
+}
