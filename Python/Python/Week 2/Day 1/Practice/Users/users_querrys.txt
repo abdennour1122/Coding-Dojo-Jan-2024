@@ -1,0 +1,27 @@
+SELECT * FROM users_schema.users;
+
+INSERT INTO users (first_name, last_name,email) 
+VALUES("abdennour", "ayedi","a@mail.com"),
+('Yaya', 'Dembele','yaya@mail.com'),
+('Iheb', 'Mechi','iheb@mail.com')
+;
+SELECT * FROM users_schema.users
+where email='iheb@mail.com';
+
+SELECT * FROM users
+WHERE id = 6;
+
+UPDATE users
+SET  last_name = 'Pancakes'
+WHERE id=3;
+
+DELETE FROM users 
+WHERE id=2;
+
+SELECT *
+FROM users
+ORDER BY first_name ASC;
+
+
+
+
