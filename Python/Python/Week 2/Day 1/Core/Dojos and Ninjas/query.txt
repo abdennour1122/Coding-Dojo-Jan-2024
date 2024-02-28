@@ -1,0 +1,32 @@
+SELECT * FROM dojos_and_ninjas_schema.ninjas;
+INSERT INTO ninjas(first_name,last_name,age,dojo_id) 
+VALUES('muhammad ali','klay',20,7),
+('cristiano','ronaldo',39,7),
+('khabib','nurmagomedov',32,7);
+
+INSERT INTO ninjas(first_name,last_name,age,dojo_id) 
+VALUES('joe','frezier',20,8),
+('neymare','jr',34,8),
+('kobe','bryant',32,8);
+INSERT INTO ninjas(first_name,last_name,age,dojo_id) 
+VALUES('abdulwahid','tank',20,9),
+('devin','haney',34,9),
+('george','foreman',32,9);
+
+SELECT * FROM ninjas 
+where dojo_id=7;
+
+SELECT * FROM ninjas 
+where dojo_id=9;
+
+
+SELECT * FROM ninjas 
+where id=18;
+SELECT * FROM dojos_and_ninjas_schema.ninjas 
+JOIN dojos_and_ninjas_schema.dojos ON dojos_and_ninjas_schema.dojos.dojo_id = dojos_and_ninjas_schema.ninjas.dojo_id
+WHERE dojos_and_ninjas_schema.ninjas.id=6;
+
+
+SELECT * FROM dojos_and_ninjas_schema.ninjas 
+JOIN dojos_and_ninjas_schema.dojos ON dojos_and_ninjas_schema.dojos.dojo_id = dojos_and_ninjas_schema.ninjas.dojo_id
+;
