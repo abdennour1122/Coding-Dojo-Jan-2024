@@ -1,0 +1,112 @@
+/* css Reset */
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(201, 182, 182);
+    padding-left: 30px;
+    padding-top: 20px;
+
+}
+.part1{
+    display: flex;
+    align-items: center; 
+    
+}
+.wolfimg{
+    padding-left: 50px;
+    
+    
+}
+h2{
+    padding-left: 30px;
+}
+span{
+    color: red;
+}
+.part2{   
+    padding-top: 30px;
+    padding-right: 20px;
+
+}
+hr {
+    border: 1px solid red;
+  }
+.part2 button{
+    border-radius: 10px;
+    width: 100px;
+}
+.abdennour{
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 20%;
+    align-items: center;
+    padding-top: 10px;
+}
+.abdou{
+    align-content: center;
+    padding-left: 30px;
+    border-radius: 50%;
+}
+.abdennour a{
+    padding-left: 70px;
+
+}
+.maryem{
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 20%;
+    align-items: center;
+    padding-top: 10px;
+}
+.mari{
+    align-content: center;
+    padding-left: 30px;
+    border-radius: 50%;
+}
+.maryem a{
+    padding-left: 70px;
+
+}
+.aziz{
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 20%;
+    align-items: center;
+    padding-top: 10px;
+}
+.azi{
+    align-content: center;
+    padding-left: 30px;
+    border-radius: 50%;
+}
+.aziz a{
+    padding-left: 70px;
+
+}
+.mohamed-ali{
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 20%;
+    align-items: center;
+    padding-top: 10px;
+}
+.dali{
+    align-content: center;
+    padding-left: 30px;
+    border-radius: 50%;
+}
+.mohamed-ali a{
+    padding-left: 70px;
+
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+

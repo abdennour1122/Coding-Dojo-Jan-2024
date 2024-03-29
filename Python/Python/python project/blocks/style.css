@@ -1,0 +1,25 @@
+.left{
+    flex: 3;
+}
+.right{
+    flex: 2;
+}
+body{
+    display: flex   ;
+}
+.description{
+    margin-top: 50px;
+}
+
+.section{
+    margin-top: 20px;
+}
+.skills{
+    margin-top: 20px;
+}
+.experience{
+    margin-top: 20px;
+}
+.courses{
+    margin-top: 20px;
+}

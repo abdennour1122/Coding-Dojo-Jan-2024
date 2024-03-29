@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Webpage Title -->
+    <title>Sign Up - Ioniq</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='swiper.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+        <div class="container">
+
+            <!-- Image Logo -->
+            <h5>My <span style="color: orange;">Gym</span> Buddy</h5>
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
+
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                    <span class="nav-item">
+                        <a class="btn-outline-sm" href="/">Home</a>
+
+                    </span>
+
+
+                </ul>
+                <span class="nav-item">
+                    <a class="btn-outline-sm" href="/loginform">Log in</a>
+
+                </span>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1 class="text-center">Sign Up</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+
+    <!-- Basic -->
+    <div class="ex-form-1 pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 offset-xl-3">
+                    <div class="text-box mt-5 mb-5">
+                        <p class="mb-4">Fill out the form below to sign up for the service. Already signed up? Then just
+                            <a class="blue" href="/loginform">Log In</a></p>
+
+                        <!-- Sign Up Form -->
+                        <form action="/client/new" method="post" style="margin-left: 20%;">
+
+                            {% with messages = get_flashed_messages(with_categories=true) %}
+                            
+                            <!-- Moved outside of the form -->
+                            <div class="left" style="width: 350px;background-color: #FFE0C4;">
+                                <input type="hidden" name="user_id" value="{{id}}">
+                                <div class="mb-3" style="margin-left: 20px;">
+                                    <label for="weight" class="form-label">Weight:</label>
+                                    <input type="number" class="form-control" id="weight" name="weight"
+                                        style="width: 300px;">
+                                    {% for category ,message in messages %}
+                                    {% if "weight" in category %}
+                                    <p>{{message}}</p>
+                                    {% endif %}
+                                    {% endfor %}
+                                    <label for="height" class="form-label">Height:</label>
+                                    <input type="number" class="form-control" id="height" name="height"
+                                        style="width: 300px;">
+                                    {% for category ,message in messages %}
+                                    {% if "height" in category %}
+                                    <p>{{message}}</p>
+                                    {% endif %}
+                                    {% endfor %}
+                                    <label for="allergies" class="form-label">Allergies:</label>
+                                    <input type="text" class="form-control" id="allergies" name="allergies"
+                                        style="width: 300px;">
+                                    <div class="form-text">We'll never share your email with anyone else.
+                                    </div>
+                                    {% for category ,message in messages %}
+                                    {% if "allergies" in category %}
+                                    <p>{{message}}</p>
+                                    {% endif %}
+                                    {% endfor %}
+                                    <label  class="form-label">Budget :</label>
+                                    <input type="number" class="form-control"  name="budget"
+                                        style="width: 300px;">
+                                    {% for category ,message in messages %}
+                                    {% if "budget" in category %}
+                                    <p>{{message}}</p>
+                                    {% endif %}
+                                    {% endfor %}
+                                    <label  class="form-label">Injury:</label>
+                                    <input type="text" class="form-control"  name="injury"
+                                        style="width: 300px;">
+                                    {% for category ,message in messages %}
+                                    {% if "injury" in category %}
+                                    <p>{{message}}</p>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                                <div class="mb-3" style="margin-left: 20px;">
+                                    <label for="trained" class="form-label">Trained:</label>
+                                    <select name="trained" id="">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                    {% for category ,message in messages %}
+                                    {% if "trained" in category %}
+                                    <p>{{message}}</p>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                                
+
+                                <div class="form-group">
+                                    <label class="h6">Sport :</label>
+                                    <select name="sport_id" id="">
+                                        {% for each_sport in all_sports %}
+                                        <option value="{{each_sport.id}}">{{each_sport.name}}</option>
+                                        {%endfor%}
+                                    </select>
+                                </div>
+                                
+                                
+                                <button type="submit" class="form-control-submit-button">Register </button>
+                            </div>
+                            {% endwith %}
+                        </form>
+                        <!-- end of sign up form -->
+
+                    </div> <!-- end of text-box -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of ex-basic-1 -->
+    <!-- end of basic -->
+
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-col first">
+                        <h6>About Website</h6>
+                        <p class="p-small">Proin ut felis purus vestibulum in orci molestie, efficitur lacus ac
+                            pellentesque elit. Fusce mollis laoreet lobortis nulla ac efficitur lacus ac </p>
+                    </div> <!-- end of footer-col -->
+                    
+                    <div class="footer-col third">
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-pinterest-p fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <p class="p-small">Quam posuerei pellent esque vam <a
+                                href="mailto:contact@site.com"><strong>contact@site.com</strong></a></p>
+                    </div> <!-- end of footer-col -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->
+    <!-- end of footer -->
+
+    <!-- Back To Top Button -->
+    <button id="myBtn">
+        <img src="images/up-arrow.png" alt="alternative">
+    </button>
+    <!-- end of back to top button -->
+
+</body>
+
+</html>
