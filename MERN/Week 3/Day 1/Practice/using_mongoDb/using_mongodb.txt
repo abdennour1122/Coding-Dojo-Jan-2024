@@ -1,0 +1,255 @@
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db> db.students.find();
+[
+  {
+    _id: ObjectId('662293194bc2add21f117b7b'),
+    name: 'Alice',
+    home_state: 'California',
+    lucky_number: 7,
+    birthday: { month: 5, day: 15, year: 1995 }
+  },
+  {
+    _id: ObjectId('662293194bc2add21f117b7c'),
+    name: 'Bob',
+    home_state: 'Washington',
+    lucky_number: 4,
+    birthday: { month: 8, day: 21, year: 1998 }
+  },
+  {
+    _id: ObjectId('662293194bc2add21f117b7d'),
+    name: 'Charlie',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 12, day: 3, year: 1993 }
+  },
+  {
+    _id: ObjectId('662293194bc2add21f117b7e'),
+    name: 'David',
+    home_state: 'Washington',
+    lucky_number: 6,
+    birthday: { month: 2, day: 10, year: 1997 }
+  },
+  {
+    _id: ObjectId('662293194bc2add21f117b7f'),
+    name: 'Emma',
+    home_state: 'Texas',
+    lucky_number: 9,
+    birthday: { month: 10, day: 5, year: 1994 }
+  }
+]
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db> db.students.find({ home_state: { $in: ["California", "Washington"] } });
+[
+  {
+    _id: ObjectId('662293194bc2add21f117b7b'),
+    name: 'Alice',
+    home_state: 'California',
+    lucky_number: 7,
+    birthday: { month: 5, day: 15, year: 1995 }
+  },
+  {
+    _id: ObjectId('662293194bc2add21f117b7c'),
+    name: 'Bob',
+    home_state: 'Washington',
+    lucky_number: 4,
+    birthday: { month: 8, day: 21, year: 1998 }
+  },
+  {
+    _id: ObjectId('662293194bc2add21f117b7d'),
+    name: 'Charlie',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 12, day: 3, year: 1993 }
+  },
+  {
+    _id: ObjectId('662293194bc2add21f117b7e'),
+    name: 'David',
+    home_state: 'Washington',
+    lucky_number: 6,
+    birthday: { month: 2, day: 10, year: 1997 }
+  }
+]
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db> db.students.find({lucky_number: {$gt: 3}});
+[
+  {
+    _id: ObjectId('662293194bc2add21f117b7b'),
+    name: 'Alice',
+    home_state: 'California',
+    lucky_number: 7,
+    birthday: { month: 5, day: 15, year: 1995 }
+  },
+  {
+    _id: ObjectId('662293194bc2add21f117b7c'),
+    name: 'Bob',
+    home_state: 'Washington',
+    lucky_number: 4,
+    birthday: { month: 8, day: 21, year: 1998 }
+  },
+  {
+    _id: ObjectId('662293194bc2add21f117b7e'),
+    name: 'David',
+    home_state: 'Washington',
+    lucky_number: 6,
+    birthday: { month: 2, day: 10, year: 1997 }
+  },
+  {
+    _id: ObjectId('662293194bc2add21f117b7f'),
+    name: 'Emma',
+    home_state: 'Texas',
+    lucky_number: 9,
+    birthday: { month: 10, day: 5, year: 1994 }
+  }
+]
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db> db.students.updateMany({}, {$set: {interests: ["coding", "brunch", "MongoDB"]}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 5,
+  modifiedCount: 5,
+  upsertedCount: 0
+}
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db> db.students.find();
+[
+  {
+    _id: ObjectId('662293194bc2add21f117b7b'),
+    name: 'Alice',
+    home_state: 'California',
+    lucky_number: 7,
+    birthday: { month: 5, day: 15, year: 1995 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId('662293194bc2add21f117b7c'),
+    name: 'Bob',
+    home_state: 'Washington',
+    lucky_number: 4,
+    birthday: { month: 8, day: 21, year: 1998 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId('662293194bc2add21f117b7d'),
+    name: 'Charlie',
+    home_state: 'California',
+    lucky_number: 3,
+    birthday: { month: 12, day: 3, year: 1993 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId('662293194bc2add21f117b7e'),
+    name: 'David',
+    home_state: 'Washington',
+    lucky_number: 6,
+    birthday: { month: 2, day: 10, year: 1997 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  },
+  {
+    _id: ObjectId('662293194bc2add21f117b7f'),
+    name: 'Emma',
+    home_state: 'Texas',
+    lucky_number: 9,
+    birthday: { month: 10, day: 5, year: 1994 },
+    interests: [ 'coding', 'brunch', 'MongoDB' ]
+  }
+]
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db>
+
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db> db.students.update({name: "Alice"}, {$addToSet: {interests: "hiking"}});
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db> db.students.update({name: "Bob"}, {$addToSet: {interests: "painting"}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db> db.students.update({name: "Charlie"}, {$addToSet: {interests: "reading"}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db> db.students.update({name: "David"}, {$addToSet: {interests: "swimming"}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db> db.students.update({name: "Emma"}, {$addToSet: {interests: "cooking"}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db> db.students.updateOne({name: "Alice"}, {$addToSet: {interests: "taxes"}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db> db.students.updateOne({name: "Alice"}, {$pull: {interests: "taxes"}});
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db> db.students.deleteMany({home_state: "California"});
+{ acknowledged: true, deletedCount: 2 }
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db> db.students.deleteOne({name: "Emma"});
+{ acknowledged: true, deletedCount: 1 }
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db> db.students.deleteOne({lucky_number: {$gt: 5}});
+{ acknowledged: true, deletedCount: 1 }
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db> db.students.updateMany({}, {$set: {number_of_belts: 0}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db> db.students.updateMany({home_state: "Washington"}, {$inc: {number_of_bnumber_of_belts: 1}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db> db.students.updateMany({}, {$set: {updated_on: new Date()}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db> db.students.find();
+[
+  {
+    _id: ObjectId('662293194bc2add21f117b7c'),
+    name: 'Bob',
+    home_state: 'Washington',
+    lucky_number: 4,
+    birthday: { month: 8, day: 21, year: 1998 },
+    interests: [ 'coding', 'brunch', 'MongoDB', 'painting' ],
+    number_of_belts: 1,
+    updated_on: ISODate('2024-04-19T22:36:25.195Z')
+  }
+]
+Atlas atlas-pylnkw-shard-0 [primary] my_first_db>
