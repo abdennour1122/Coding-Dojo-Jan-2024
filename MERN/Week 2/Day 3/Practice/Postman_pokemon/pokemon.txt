@@ -1,0 +1,13 @@
+1 . https://pokeapi.co/api/v2/pokemon/1
+
+2 . https://pokeapi.co/api/v2/pokemon/pikachu
+
+3. https://pokeapi.co/api/v2/pokemon/520
+
+4. https://pokeapi.co/api/v2/pokemon/49
+
+5. https://pokeapi.co/api/v2/pokemon/charizard
+
+
+
+
