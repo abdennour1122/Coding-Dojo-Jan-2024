@@ -1,0 +1,21 @@
+@charset "ISO-8859-1";
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.fruits{
+    width: 50rem;
+    border: 10px solid #ffb6c2;
+}
+
+.title{
+    width: 50rem;
+    text-align: start;
+    margin-bottom: 10px;
+    color: #ffb6c2
+}
