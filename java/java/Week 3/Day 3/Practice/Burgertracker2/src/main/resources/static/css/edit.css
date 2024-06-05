@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+.center-container {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+    }
+    
+.title{
+	width: 44vw;
+}
